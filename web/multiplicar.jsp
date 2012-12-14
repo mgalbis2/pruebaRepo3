@@ -12,10 +12,14 @@
         <title>JSP Page</title>
     </head>
     <body>
-       <form name="tablas" action="/pruebaRepositorio3/servlet" method="POST">
-           Numero: <input type="text" name="numero" size="100" />
+       <form name="tablas" action="servlet" method="POST">
+           Numero: <input type="text" name="numero" size="3" />
            <input type="submit" value="Enviar" name="enviar" />
            <input type="hidden" name="accion" value="tablas" />
        </form>
+        <div>
+            <%=request.getAttribute("resultado") != null?
+                request.getAttribute("resultado"):""%>
+        </div>
     </body>
 </html>

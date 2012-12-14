@@ -87,11 +87,11 @@ public class servlet extends HttpServlet {
                     url = "/agenda.jsp";
                     
                     String telefono = agenda(nombre);
-                    request.setAttribute("resultado", nombre+" : "+telefono);
+                    request.setAttribute("resultado", telefono);
                     break;
                 case "tablas":
                     String numero = request.getParameter("numero");
-                    url = "/tablas.jsp";
+                    url = "/multiplicar.jsp";
                     
                     String tabla = tabla(numero);
                     request.setAttribute("resultado", tabla);
@@ -114,7 +114,7 @@ public class servlet extends HttpServlet {
 
     protected String agenda(String nombre) {
         HashMap<String, String> agenda = new HashMap();
-        agenda.put("Maria", "666000333");
+        agenda.put("María", "666000333");
         agenda.put("Pepe", "612359232");
         agenda.put("Javi", "602849366");
         agenda.put("Carlos", "600390234");
@@ -124,11 +124,11 @@ public class servlet extends HttpServlet {
         agenda.put("Juan", "672332008");
         agenda.put("Pedro", "698123456");
         agenda.put("Ana", "678901123");
-        agenda.put("Estefania", "678312304");
-        agenda.put("Raul", "628402094");
+        agenda.put("Estefanía", "678312304");
+        agenda.put("Raúl", "628402094");
 
         if (agenda.containsKey(nombre)) {
-            return agenda.get(nombre);
+            return nombre+" : "+agenda.get(nombre);
         } else {
             return "Nombre no encontrado";
         }

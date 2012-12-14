@@ -12,11 +12,15 @@
         <title>Multiplicar</title>
     </head>
     <body>
-        <form name="agenda" action="/pruebaRepositorio3/servlet" method="POST">
-            Nombre: <input type="text" name="nombre" size="100" />
+        <form name="agenda" action="servlet" method="POST" accept-charset="ISO-8859-1">
+            Nombre: <input type="text" name="nombre" size="5" />
             <input type="submit" value="Enviar" name="enviar" />
-           <input type="hidden" name="accion" value="nombre" />      
+           <input type="hidden" name="accion" value="agenda" />      
         
         </form>
+        <div>
+            <%=request.getAttribute("resultado") != null?
+                request.getAttribute("resultado"):""%>
+        </div>
     </body>
 </html>
